@@ -19,7 +19,6 @@ const doIt = (path) => {
 
     if (n.length && v.length && !(/^#/).test(n)) {
       const trimmed = trim(v);
-      // console.log(`trimmed`, trimmed)
       const singleStripped = strip(trimmed, "'");
       const doubleStripped = strip(singleStripped, '"');
       process.env[n] = doubleStripped;
