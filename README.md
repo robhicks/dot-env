@@ -7,6 +7,8 @@ dot-env is not a drop-in replacement for (dotenv)[https://github.com/motdotla/do
 dot-env doesn't do everything dotenv does. But it does 99% of what dotenv does and it is importable. In addition, it will handle an array of .env files. Yes, I know. dotenv discourages using more than one. Oh well, some of us are rebels and 
 prefer to split up huge .env files.
 
+[![Build Status](https://travis-ci.com/robhicks/dot-env.svg?branch=master)](https://travis-ci.com/robhicks/dot-env)
+
 ## Installation
 
 ```sh 
