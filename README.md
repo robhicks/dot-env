@@ -2,7 +2,7 @@
 
 dot-env reads one or more .env files and adds the contents of them to process.env.
 
-dot-env is not a drop-in replacement for (dotenv)[https://github.com/motdotla/dotenv], nor does pretend or want to be. I needed an es module version of dotenv for @sveltejs/kit project. So, I looked at the source code for dotenv and got a headache. dot-env is much simpler than dotenv. It doesn't contain a configure function. It is much smaller. It is available in both es module and cjs formats.
+dot-env is not a drop-in replacement for [dotenv](https://github.com/motdotla/dotenv), nor does pretend or want to be. I needed an es module version of dotenv for @sveltejs/kit project. So, I looked at the source code for dotenv and got a headache. dot-env is much simpler than dotenv. It doesn't contain a configure function. It is much smaller. It is available in both es module and cjs formats.
 
 dot-env doesn't do everything dotenv does. But it does 99% of what dotenv does and it is importable. In addition, it will handle an array of .env files. Yes, I know. dotenv discourages using more than one. Oh well, some of us are rebels and 
 prefer to split up huge .env files.
