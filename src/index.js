@@ -2,8 +2,13 @@ const fs = require('fs');
 
 const trim = (str) => str.trim();
 
-const single = (str) => (str.startsWith("'") && str.endsWith("'") ? str.replace(/^'/, '').replace(/'$/, '') : str);
-const double = (str) => (str.startsWith('"') && str.endsWith('"') ? str.replace(/^"/, '').replace(/"$/, '') : str);
+const strip = (str, char) => {
+  const b = new RegExp(`^${char}`);
+  const e = new RegExp(`${char}$`);
+  return str.startsWith(char) && str.endsWith(char)
+    ? str.replace(b, '').replace(e, '')
+    : str;
+};
 
 const doIt = (path) => {
   const file = fs.readFileSync(path, 'utf8');
@@ -15,8 +20,8 @@ const doIt = (path) => {
     if (n.length && v.length && !(/^#/).test(n)) {
       const trimmed = trim(v);
       // console.log(`trimmed`, trimmed)
-      const singleStripped = single(trimmed);
-      const doubleStripped = double(singleStripped);
+      const singleStripped = strip(trimmed, "'");
+      const doubleStripped = strip(singleStripped, '"');
       process.env[n] = doubleStripped;
     }
   });
@@ -24,6 +29,7 @@ const doIt = (path) => {
 
 module.exports = (path) => {
   const paths = Array.isArray(path) ? path : [path];
+  /* eslint-disable no-global-assign */
   process = typeof process === 'object' ? process : {};
   process.env = typeof process.env === 'object' ? process.env : {};
 
