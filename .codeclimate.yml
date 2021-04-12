@@ -35,4 +35,4 @@ exclude_paths:
   - "rollup.config.js"
   - "index.cjs"
   - "index.mjs"
-  - "tests/**"
+  - "tests/"
