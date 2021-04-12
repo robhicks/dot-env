@@ -1,5 +1,5 @@
 {
-  "name": "@savvagent/dot-env",
+  "name": "dot-env",
   "version": "0.9.0",
   "description": "dot-env reads one or more .env files and adds the contents of them to process.env.",
   "engines": {
